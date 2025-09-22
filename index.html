@@ -1,0 +1,1539 @@
+    <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+        실전 시뮬레이션과 체계적인 학습으로 NAC 전문가가 되어보세요
+    </p>
+</div>
+
+<div class="grid md:grid-cols-3 gap-8">
+    <!-- 빠른 테스트 -->
+    <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 card-hover cursor-pointer" onclick="startQuickTest()">
+        <div class="w-16 h-16 bg-gradient-to-br from-genians-green to-genians-light-green rounded-2xl flex items-center justify-center mb-6">
+            <i class="fas fa-bolt text-white text-2xl"></i>
+        </div>
+        <h4 class="text-2xl font-bold text-white mb-4">빠른 테스트</h4>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+            10분 안에 완료할 수 있는 핵심 NAC 개념 테스트로 실력을 점검하세요.
+        </p>
+        <div class="space-y-3 mb-6">
+            <div class="flex items-center text-sm text-gray-300">
+                <i class="fas fa-clock text-genians-green mr-2"></i>
+                소요시간: 10분
+            </div>
+            <div class="flex items-center text-sm text-gray-300">
+                <i class="fas fa-question-circle text-genians-green mr-2"></i>
+                문항수: 15문제
+            </div>
+            <div class="flex items-center text-sm text-gray-300">
+                <i class="fas fa-chart-line text-genians-green mr-2"></i>
+                즉시 결과 확인
+            </div>
+        </div>
+        <button class="w-full bg-genians-green hover:bg-genians-light-green text-genians-navy py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105">
+            시작하기
+        </button>
+    </div>
+    
+    <!-- 모의시험 -->
+    <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 card-hover cursor-pointer" onclick="startMockExam()">
+        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fas fa-graduation-cap text-white text-2xl"></i>
+        </div>
+        <h4 class="text-2xl font-bold text-white mb-4">모의시험</h4>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+            실제 NAC 인증시험과 동일한 환경에서 종합적인 실력을 평가받으세요.
+        </p>
+        <div class="space-y-3 mb-6">
+            <div class="flex items-center text-sm text-gray-300">
+                <i class="fas fa-clock text-purple-400 mr-2"></i>
+                소요시간: 60분
+            </div>
+            <div class="flex items-center text-sm text-gray-300">
+                <i class="fas fa-question-circle text-purple-400 mr-2"></i>
+                문항수: 50문제
+            </div>
+            <div class="flex items-center text-sm text-gray-300">
+                <i class="fas fa-certificate text-purple-400 mr-2"></i>
+                상세 성적표 제공
+            </div>
+        </div>
+        <button class="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105">
+            시작하기
+        </button>
+    </div>
+    
+    <!-- 오답노트 -->
+    <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 card-hover cursor-pointer" onclick="showWrongAnswers()">
+        <div class="w-16 h-16 bg-gradient-to-br from-genians-accent to-blue-500 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fas fa-book-open text-white text-2xl"></i>
+        </div>
+        <h4 class="text-2xl font-bold text-white mb-4">오답노트</h4>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+            틀린 문제들을 체계적으로 복습하고 약점을 보완하여 실력을 향상시키세요.
+        </p>
+        <div class="space-y-3 mb-6">
+            <div class="flex items-center text-sm text-gray-300">
+                <i class="fas fa-brain text-genians-accent mr-2"></i>
+                개인별 맞춤 복습
+            </div>
+            <div class="flex items-center text-sm text-gray-300">
+                <i class="fas fa-lightbulb text-genians-accent mr-2"></i>
+                상세한 해설 제공
+            </div>
+            <div class="flex items-center text-sm text-gray-300">
+                <i class="fas fa-chart-bar text-genians-accent mr-2"></i>
+                학습 진도 추적
+            </div>
+        </div>
+        <button class="w-full bg-genians-accent hover:bg-blue-500 text-white py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105">
+            복습하기
+        </button>
+    </div>
+</div>
+
+<!-- 학습 현황 대시보드 -->
+<div class="mt-16 bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+    <h4 class="text-2xl font-bold text-white mb-8 text-center">나의 학습 현황</h4>
+    
+    <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center">
+            <div class="w-20 h-20 bg-gradient-to-br from-genians-green to-genians-light-green rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-2xl font-bold text-white" id="completedTests">12</span>
+            </div>
+            <p class="text-white font-semibold mb-1">완료한 테스트</p>
+            <p class="text-gray-300 text-sm">총 테스트 수</p>
+        </div>
+        
+        <div class="text-center">
+            <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-2xl font-bold text-white">87%</span>
+            </div>
+            <p class="text-white font-semibold mb-1">평균 정답률</p>
+            <p class="text-gray-300 text-sm">최근 10회 기준</p>
+        </div>
+        
+        <div class="text-center">
+            <div class="w-20 h-20 bg-gradient-to-br from-genians-accent to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-2xl font-bold text-white">24</span>
+            </div>
+            <p class="text-white font-semibold mb-1">학습 연속일</p>
+            <p class="text-gray-300 text-sm">연속 학습 기록</p>
+        </div>
+        
+        <div class="text-center">
+            <div class="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-xl font-bold text-white">고급</span>
+            </div>
+            <p class="text-white font-semibold mb-1">현재 레벨</p>
+            <p class="text-gray-300 text-sm">NAC 전문가 과정</p>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- 실시간 대시보드 섹션 -->
+<section id="analytics" class="py-24 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h3 class="text-4xl font-bold text-genians-navy mb-4">실시간 대시보드</h3>
+<p class="text-xl text-gray-600">네트워크 보안 현황을 한눈에 파악하고 관리하세요</p>
+</div>
+
+<div class="grid lg:grid-cols-3 gap-8">
+<!-- 실시간 상태 -->
+<div class="lg:col-span-2 bg-white rounded-3xl shadow-xl p-8">
+    <div class="flex items-center justify-between mb-8">
+        <h4 class="text-2xl font-bold text-genians-navy">네트워크 보안 상태</h4>
+        <div class="flex items-center space-x-2">
+            <div class="w-3 h-3 bg-genians-green rounded-full animate-pulse"></div>
+            <span class="text-sm font-medium text-genians-green">실시간 모니터링</span>
+        </div>
+    </div>
+    
+    <!-- 주요 지표 -->
+    <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-gradient-to-br from-genians-green/10 to-genians-light-green/10 rounded-2xl p-6 border border-genians-green/20">
+            <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 bg-genians-green rounded-xl flex items-center justify-center">
+                    <i class="fas fa-shield-alt text-white"></i>
+                </div>
+                <span class="text-2xl font-bold text-genians-green">98.7%</span>
+            </div>
+            <h5 class="font-semibold text-genians-navy mb-1">보안 점수</h5>
+            <p class="text-sm text-gray-600">전반적인 보안 상태</p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-blue-50 to-genians-accent/10 rounded-2xl p-6 border border-genians-accent/20">
+            <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 bg-genians-accent rounded-xl flex items-center justify-center">
+                    <i class="fas fa-users text-white"></i>
+                </div>
+                <span class="text-2xl font-bold text-genians-accent">1,247</span>
+            </div>
+            <h5 class="font-semibold text-genians-navy mb-1">활성 사용자</h5>
+            <p class="text-sm text-gray-600">현재 접속 중인 사용자</p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-6 border border-red-200">
+            <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-exclamation-triangle text-white"></i>
+                </div>
+                <span class="text-2xl font-bold text-red-500">3</span>
+            </div>
+            <h5 class="font-semibold text-genians-navy mb-1">위험 알림</h5>
+            <p class="text-sm text-gray-600">즉시 조치 필요</p>
+        </div>
+    </div>
+    
+    <!-- 차트 영역 -->
+    <div class="bg-gray-50 rounded-2xl p-6">
+        <div class="flex items-center justify-between mb-4">
+            <h5 class="font-semibold text-genians-navy">24시간 트래픽 현황</h5>
+            <select class="text-sm border border-gray-200 rounded-lg px-3 py-1">
+                <option>오늘</option>
+                <option>어제</option>
+                <option>지난 7일</option>
+            </select>
+        </div>
+        <div class="h-40 bg-white rounded-xl flex items-end justify-around p-4 space-x-2">
+            <div class="w-8 bg-gradient-to-t from-genians-green to-genians-light-green rounded-t" style="height: 60%"></div>
+            <div class="w-8 bg-gradient-to-t from-genians-green to-genians-light-green rounded-t" style="height: 80%"></div>
+            <div class="w-8 bg-gradient-to-t from-genians-green to-genians-light-green rounded-t" style="height: 45%"></div>
+            <div class="w-8 bg-gradient-to-t from-genians-green to-genians-light-green rounded-t" style="height: 90%"></div>
+            <div class="w-8 bg-gradient-to-t from-genians-green to-genians-light-green rounded-t" style="height: 70%"></div>
+            <div class="w-8 bg-gradient-to-t from-genians-green to-genians-light-green rounded-t" style="height: 85%"></div>
+            <div class="w-8 bg-gradient-to-t from-genians-green to-genians-light-green rounded-t" style="height: 95%"></div>
+            <div class="w-8 bg-gradient-to-t from-genians-accent to-blue-400 rounded-t" style="height: 100%"></div>
+        </div>
+    </div>
+</div>
+
+<!-- 활동 로그 -->
+<div class="bg-white rounded-3xl shadow-xl p-8">
+    <h4 class="text-2xl font-bold text-genians-navy mb-6">최근 활동</h4>
+    
+    <div class="space-y-4">
+        <div class="flex items-start space-x-3 p-4 bg-green-50 rounded-xl">
+            <div class="w-8 h-8 bg-genians-green rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-check text-white text-sm"></i>
+            </div>
+            <div>
+                <h6 class="font-semibold text-genians-navy">정책 업데이트 완료</h6>
+                <p class="text-sm text-gray-600">NAC 보안 정책이 성공적으로 적용되었습니다</p>
+                <span class="text-xs text-gray-500">2분 전</span>
+            </div>
+        </div>
+        
+        <div class="flex items-start space-x-3 p-4 bg-yellow-50 rounded-xl">
+            <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-exclamation text-white text-sm"></i>
+            </div>
+            <div>
+                <h6 class="font-semibold text-genians-navy">의심스러운 접속 탐지</h6>
+                <p class="text-sm text-gray-600">비정상적인 접속 패턴이 감지되었습니다</p>
+                <span class="text-xs text-gray-500">5분 전</span>
+            </div>
+        </div>
+        
+        <div class="flex items-start space-x-3 p-4 bg-blue-50 rounded-xl">
+            <div class="w-8 h-8 bg-genians-accent rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-info text-white text-sm"></i>
+            </div>
+            <div>
+                <h6 class="font-semibold text-genians-navy">새 사용자 등록</h6>
+                <p class="text-sm text-gray-600">marketing@company.com이 네트워크에 등록되었습니다</p>
+                <span class="text-xs text-gray-500">12분 전</span>
+            </div>
+        </div>
+        
+        <div class="flex items-start space-x-3 p-4 bg-green-50 rounded-xl">
+            <div class="w-8 h-8 bg-genians-green rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-sync text-white text-sm"></i>
+            </div>
+            <div>
+                <h6 class="font-semibold text-genians-navy">시스템 백업 완료</h6>
+                <p class="text-sm text-gray-600">일일 자동 백업이 정상적으로 완료되었습니다</p>
+                <span class="text-xs text-gray-500">1시간 전</span>
+            </div>
+        </div>
+    </div>
+    
+    <button class="w-full mt-6 text-genians-green hover:text-genians-light-green font-semibold py-2 transition-colors duration-300">
+        전체 로그 보기 <i class="fas fa-arrow-right ml-1"></i>
+    </button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 푸터 -->
+<footer class="gradient-bg border-t border-gray-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+<div class="grid md:grid-cols-4 gap-8">
+<div class="col-span-2">
+    <div class="flex items-center space-x-3 mb-6">
+        <div class="w-12 h-12 bg-genians-green rounded-xl flex items-center justify-center">
+            <i class="fas fa-shield-alt text-white text-xl"></i>
+        </div>
+        <div>
+            <h3 class="text-2xl font-bold text-white">지니언스</h3>
+            <p class="text-genians-light-green">NAC 도우미</p>
+        </div>
+    </div>
+    <p class="text-gray-300 leading-relaxed mb-6">
+        지니언스의 혁신적인 AI 기술로 네트워크 보안의 새로운 차원을 경험하세요. 
+        실시간 위협 탐지부터 자동화된 대응까지, 모든 것이 하나로 통합된 솔루션입니다.
+    </p>
+    <div class="flex space-x-4">
+        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-genians-green transition-colors duration-300">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-genians-green transition-colors duration-300">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-genians-green transition-colors duration-300">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+</div>
+
+<div>
+    <h4 class="text-lg font-semibold text-white mb-6">주요 기능</h4>
+    <ul class="space-y-3">
+        <li><a href="#qa" class="text-gray-300 hover:text-genians-green transition-colors duration-300">AI 이슈 Q&A</a></li>
+        <li><a href="#briefing" class="text-gray-300 hover:text-genians-green transition-colors duration-300">보안 브리핑</a></li>
+        <li><a href="#lab" class="text-gray-300 hover:text-genians-green transition-colors duration-300">NAC 연습실</a></li>
+        <li><a href="#analytics" class="text-gray-300 hover:text-genians-green transition-colors duration-300">실시간 대시보드</a></li>
+    </ul>
+</div>
+
+<div>
+    <h4 class="text-lg font-semibold text-white mb-6">지원</h4>
+    <ul class="space-y-3">
+        <li><a href="#" class="text-gray-300 hover:text-genians-green transition-colors duration-300">기술 지원</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-genians-green transition-colors duration-300">사용자 가이드</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-genians-green transition-colors duration-300">FAQ</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-genians-green transition-colors duration-300">문의하기</a></li>
+    </ul>
+</div>
+</div>
+
+<hr class="border-gray-600 my-8">
+
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-300 text-sm">
+    © 2024 지니언스(Genians). All rights reserved.
+</p>
+<div class="flex space-x-6 mt-4 md:mt-0">
+    <a href="#" class="text-gray-300 hover:text-genians-green text-sm transition-colors duration-300">개인정보처리방침</a>
+    <a href="#" class="text-gray-300 hover:text-genians-green text-sm transition-colors duration-300">이용약관</a>
+    <a href="#" class="text-gray-300 hover:text-genians-green text-sm transition-colors duration-300">보안정책</a>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+// 모바일 메뉴 토글
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('hidden');
+}
+
+// 메인 검색 처리
+function handleMainSearch(event) {
+    event.preventDefault();
+    const query = document.getElementById('mainSearchInput').value.trim();
+    if (query) {
+        document.getElementById('qa').scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+            document.getElementById('aiSearchInput').value = query;
+            performAISearch(event);
+        }, 500);
+    }
+}
+
+    function showBriefingDemo() {
+        document.getElementById('briefing').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function showLabDemo() {
+        document.getElementById('lab').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // 연습실 기능들
+    function startQuickTest() {
+        showModal('빠른 테스트', `
+            <div class="text-center">
+                <div class="w-20 h-20 bg-genians-green rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-bolt text-white text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-genians-navy mb-4">빠른 테스트 시작</h3>
+                <p class="text-gray-600 mb-8">15문제의 NAC 핵심 개념을 테스트합니다.<br>예상 소요 시간: 10분</p>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="text-2xl font-bold text-genians-green">15</div>
+                        <div class="text-sm text-gray-600">문제 수</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="text-2xl font-bold text-genians-green">10분</div>
+                        <div class="text-sm text-gray-600">제한 시간</div>
+                    </div>
+                </div>
+                <button onclick="startTest('quick')" class="w-full bg-genians-green hover:bg-genians-light-green text-white py-3 rounded-xl font-bold transition-colors duration-300">
+                    테스트 시작
+                </button>
+            </div>
+        `);
+    }
+
+    function startMockExam() {
+        showModal('모의시험', `
+            <div class="text-center">
+                <div class="w-20 h-20 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-graduation-cap text-white text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-genians-navy mb-4">NAC 모의시험</h3>
+                <p class="text-gray-600 mb-8">실제 NAC 인증시험과 동일한 환경에서 실력을 평가합니다.<br>예상 소요 시간: 60분</p>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="text-2xl font-bold text-purple-500">50</div>
+                        <div class="text-sm text-gray-600">문제 수</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="text-2xl font-bold text-purple-500">60분</div>
+                        <div class="text-sm text-gray-600">제한 시간</div>
+                    </div>
+                </div>
+                <button onclick="startTest('mock')" class="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded-xl font-bold transition-colors duration-300">
+                    모의시험 시작
+                </button>
+            </div>
+        `);
+    }
+
+    function showWrongAnswers() {
+        showModal('오답노트', `
+            <div class="text-center">
+                <div class="w-20 h-20 bg-genians-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-book-open text-white text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-genians-navy mb-4">오답노트</h3>
+                <p class="text-gray-600 mb-8">지금까지 틀린 문제들을 복습하여 약점을 보완하세요.</p>
+                <div class="space-y-4 mb-8">
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 text-left">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-semibold text-red-600">802.1X 프로토콜</span>
+                            <span class="text-xs text-gray-500">3회 오답</span>
+                        </div>
+                        <p class="text-sm text-gray-700">802.1X 인증 과정에서 EAP 메시지 교환 순서</p>
+                    </div>
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-left">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-semibold text-yellow-600">NAC 정책</span>
+                            <span class="text-xs text-gray-500">2회 오답</span>
+                        </div>
+                        <p class="text-sm text-gray-700">동적 VLAN 할당 정책 설정 방법</p>
+                    </div>
+                    <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 text-left">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-semibold text-orange-600">엔드포인트 보안</span>
+                            <span class="text-xs text-gray-500">1회 오답</span>
+                        </div>
+                        <p class="text-sm text-gray-700">디바이스 핑거프린팅 기술의 원리</p>
+                    </div>
+                </div>
+                <button onclick="startReview()" class="w-full bg-genians-accent hover:bg-blue-500 text-white py-3 rounded-xl font-bold transition-colors duration-300">
+                    복습 시작
+                </button>
+            </div>
+        `);
+    }
+
+    // 테스트 시작 함수
+    function startTest(type) {
+        closeModal();
+        showModal('테스트 진행 중', `
+            <div class="text-center">
+                <div class="loading-spinner mx-auto mb-6"></div>
+                <h3 class="text-2xl font-bold text-genians-navy mb-4">테스트 준비 중...</h3>
+                <p class="text-gray-600">문제를 불러오고 있습니다. 잠시만 기다려주세요.</p>
+            </div>
+        `);
+        
+        setTimeout(() => {
+            closeModal();
+            alert(`${type === 'quick' ? '빠른 테스트' : '모의시험'}가 시작됩니다!`);
+        }, 2000);
+    }
+
+    function startReview() {
+        closeModal();
+        alert('오답노트 복습을 시작합니다!');
+    }
+
+    // 모달 관련 함수들
+    function showModal(title, content) {
+        const modal = document.createElement('div');
+        modal.id = 'modal';
+        modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+        modal.innerHTML = `
+            <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 transform transition-all duration-300 scale-95">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold text-genians-navy">${title}</h2>
+                    <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                ${content}
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        setTimeout(() => {
+            modal.querySelector('.bg-white').classList.remove('scale-95');
+            modal.querySelector('.bg-white').classList.add('scale-100');
+        }, 10);
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('modal');
+        if (modal) {
+            modal.remove();
+        }
+    }
+
+    // 스크롤 시 네비게이션 활성화 상태 변경
+    window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('text-genians-green');
+            link.classList.add('text-gray-300');
+            if (link.getAttribute('href').substring(1) === current) {
+                link.classList.remove('text-gray-300');
+                link.classList.add('text-genians-green');
+            }
+        });
+    });
+
+    // 페이지 로드 시 카운터 애니메이션
+    document.addEventListener('DOMContentLoaded', function() {
+        animateCounter('issueCount', 2847);
+        animateCounter('completedTests', 12);
+    });
+
+    function animateCounter(elementId, target) {
+        const element = document.getElementById(elementId);
+        if (!element) return;
+        
+        let current = 0;
+        const increment = target / 100;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            element.textContent = Math.floor(current).toLocaleString();
+        }, 20);
+    }
+
+    // 스무스 스크롤 구현
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // 키보드 이벤트 처리
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+        if (e.key === 'Enter' && document.activeElement.id === 'mainSearchInput') {
+            handleMainSearch(e);
+        }
+    });
+
+    // 실시간 시계 업데이트
+    function updateTime() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString('ko-KR');
+        
+        document.querySelector('.news-ticker-content').innerHTML = `
+            <i class="fas fa-bullhorn mr-2"></i>
+            실시간 보안 알림 (${timeString}): 새로운 NAC 정책 업데이트 완료 • 802.1X 인증 서비스 정상 운영 중 • 보안 위협 탐지 시스템 활성화 • 엔드포인트 보안 상태 양호
+        `;
+    }
+
+    setInterval(updateTime, 60000);
+    updateTime();
+
+    // 성능 최적화를 위한 이미지 지연 로딩
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+
+    // 사용자 경험 개선을 위한 로딩 피드백
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', function() {
+            if (!this.classList.contains('loading')) {
+                this.classList.add('loading');
+                setTimeout(() => {
+                    this.classList.remove('loading');
+                }, 1000);
+            }
+        });
+    });
+
+    // 다크모드 토글 기능 (추후 확장 가능)
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark'));
+    }
+
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark');
+    }
+
+    console.log('지니언스 NAC 도우미가 시작되었습니다!');
+    console.log('AI 기반 네트워크 보안 솔루션을 경험해보세요.');
+</script>
+</body>
+</html>
+
+.gradient-bg {
+background: linear-gradient(135deg, #1a2332 0%, #0f1419 100%);
+}
+
+.card-hover {
+transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+transform: translateY(-8px);
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.animate-float {
+animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+0%, 100% { transform: translateY(0px); }
+50% { transform: translateY(-20px); }
+}
+
+.loading-spinner {
+border: 3px solid #f3f3f3;
+border-top: 3px solid #7dd321;
+border-radius: 50%;
+width: 20px;
+height: 20px;
+animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+.news-ticker {
+overflow: hidden;
+white-space: nowrap;
+background: linear-gradient(90deg, rgba(125, 211, 33, 0.1) 0%, rgba(0, 212, 170, 0.1) 100%);
+}
+
+.news-ticker-content {
+display: inline-block;
+animation: ticker 30s linear infinite;
+}
+
+@keyframes ticker {
+0% { transform: translateX(100%); }
+100% { transform: translateX(-100%); }
+}
+</style>
+</head>
+
+<body class="bg-gray-50">
+<!-- 헤더 & 네비게이션 -->
+<header class="gradient-bg shadow-2xl sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<div class="flex items-center space-x-4">
+    <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-genians-green rounded-lg flex items-center justify-center">
+            <i class="fas fa-shield-alt text-white text-xl"></i>
+        </div>
+        <div>
+            <h1 class="text-2xl font-bold text-white">지니언스</h1>
+            <p class="text-genians-light-green text-sm font-medium">NAC 도우미</p>
+        </div>
+    </div>
+</div>
+
+<nav class="hidden md:flex items-center space-x-8">
+    <a href="#home" class="text-white hover:text-genians-green font-medium transition-colors duration-300">홈</a>
+    <a href="#qa" class="text-gray-300 hover:text-genians-green font-medium transition-colors duration-300">이슈 Q&A</a>
+    <a href="#briefing" class="text-gray-300 hover:text-genians-green font-medium transition-colors duration-300">보안 브리핑</a>
+    <a href="#lab" class="text-gray-300 hover:text-genians-green font-medium transition-colors duration-300">연습실</a>
+    <a href="#analytics" class="text-gray-300 hover:text-genians-green font-medium transition-colors duration-300">대시보드</a>
+</nav>
+
+<div class="flex items-center space-x-4">
+    <button class="hidden md:block bg-genians-green hover:bg-genians-light-green text-genians-navy px-6 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+        로그인
+    </button>
+    <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars text-2xl"></i>
+    </button>
+</div>
+</div>
+</div>
+
+<!-- 모바일 메뉴 -->
+<div id="mobileMenu" class="hidden md:hidden bg-genians-dark-navy border-t border-gray-600">
+<div class="px-4 py-4 space-y-3">
+<a href="#home" class="block text-white hover:text-genians-green font-medium">홈</a>
+<a href="#qa" class="block text-gray-300 hover:text-genians-green font-medium">이슈 Q&A</a>
+<a href="#briefing" class="block text-gray-300 hover:text-genians-green font-medium">보안 브리핑</a>
+<a href="#lab" class="block text-gray-300 hover:text-genians-green font-medium">연습실</a>
+<a href="#analytics" class="block text-gray-300 hover:text-genians-green font-medium">대시보드</a>
+</div>
+</div>
+</header>
+
+<!-- 뉴스 티커 -->
+<div class="news-ticker py-2">
+<div class="news-ticker-content text-genians-navy font-medium">
+<i class="fas fa-bullhorn mr-2"></i>
+실시간 보안 알림: 새로운 NAC 정책 업데이트 완료 • 802.1X 인증 서비스 정상 운영 중 • 보안 위협 탐지 시스템 활성화 • 엔드포인트 보안 상태 양호
+</div>
+</div>
+
+<!-- 메인 히어로 섹션 -->
+<section id="home" class="gradient-bg relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-20 left-20 w-32 h-32 bg-genians-green rounded-full animate-float"></div>
+<div class="absolute top-40 right-32 w-24 h-24 bg-genians-accent rounded-full animate-float" style="animation-delay: -2s;"></div>
+<div class="absolute bottom-32 left-1/3 w-20 h-20 bg-genians-light-green rounded-full animate-float" style="animation-delay: -4s;"></div>
+</div>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative">
+<div class="text-center">
+<h2 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+    <span class="bg-gradient-to-r from-genians-green to-genians-accent bg-clip-text text-transparent">AI 기반</span><br>
+    NAC 문제 해결
+</h2>
+<p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+    지니언스의 혁신적인 AI 기술로 네트워크 보안 이슈를 빠르고 정확하게 해결하세요.<br>
+    실시간 위협 탐지부터 자동화된 대응까지, 모든 것이 하나로.
+</p>
+
+<!-- 메인 검색창 -->
+<div class="max-w-4xl mx-auto mb-16">
+    <form onsubmit="handleMainSearch(event)" class="relative">
+        <div class="relative group">
+            <i class="fas fa-search absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-400 text-xl"></i>
+            <input 
+                type="text" 
+                id="mainSearchInput"
+                placeholder="네트워크 보안 이슈를 검색하세요 (예: 802.1X 인증 실패, NAC 정책 오류, 엔드포인트 차단)"
+                class="w-full pl-16 pr-32 py-6 text-lg bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-genians-green focus:border-transparent transition-all duration-300"
+            >
+            <button 
+                type="submit"
+                class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-genians-green hover:bg-genians-light-green text-genians-navy px-8 py-3 rounded-xl font-bold transition-all duration-300 flex items-center space-x-2"
+            >
+                <span>AI 검색</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- 주요 통계 -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+    <div class="text-center">
+        <div class="text-3xl md:text-4xl font-bold text-genians-green mb-2" id="issueCount">2,847</div>
+        <div class="text-gray-300 font-medium">해결된 이슈</div>
+    </div>
+    <div class="text-center">
+        <div class="text-3xl md:text-4xl font-bold text-genians-accent mb-2">99.2%</div>
+        <div class="text-gray-300 font-medium">정확도</div>
+    </div>
+    <div class="text-center">
+        <div class="text-3xl md:text-4xl font-bold text-genians-light-green mb-2">3.2초</div>
+        <div class="text-gray-300 font-medium">평균 응답시간</div>
+    </div>
+    <div class="text-center">
+        <div class="text-3xl md:text-4xl font-bold text-white mb-2">24/7</div>
+        <div class="text-gray-300 font-medium">실시간 모니터링</div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 주요 기능 섹션 -->
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h3 class="text-4xl font-bold text-genians-navy mb-4">핵심 기능</h3>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+    지니언스 NAC 도우미의 강력한 AI 기능들을 활용하여 네트워크 보안을 한 단계 업그레이드하세요
+</p>
+</div>
+
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Q&A 카드 -->
+<div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 card-hover cursor-pointer" onclick="showQADemo()">
+    <div class="w-16 h-16 bg-gradient-to-br from-genians-green to-genians-light-green rounded-2xl flex items-center justify-center mb-6">
+        <i class="fas fa-robot text-white text-2xl"></i>
+    </div>
+    <h4 class="text-2xl font-bold text-genians-navy mb-4">AI 이슈 Q&A</h4>
+    <p class="text-gray-600 mb-6 leading-relaxed">
+        자연어 처리 기술로 네트워크 보안 이슈를 즉시 분석하고 최적의 해결책을 제시합니다.
+    </p>
+    <div class="space-y-3">
+        <div class="flex items-center text-sm text-gray-500">
+            <i class="fas fa-check-circle text-genians-green mr-2"></i>
+            실시간 이슈 분석
+        </div>
+        <div class="flex items-center text-sm text-gray-500">
+            <i class="fas fa-check-circle text-genians-green mr-2"></i>
+            단계별 해결 가이드
+        </div>
+        <div class="flex items-center text-sm text-gray-500">
+            <i class="fas fa-check-circle text-genians-green mr-2"></i>
+            유사 사례 추천
+        </div>
+    </div>
+</div>
+
+<!-- 보안 브리핑 카드 -->
+<div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 card-hover cursor-pointer" onclick="showBriefingDemo()">
+    <div class="w-16 h-16 bg-gradient-to-br from-genians-accent to-blue-500 rounded-2xl flex items-center justify-center mb-6">
+        <i class="fas fa-newspaper text-white text-2xl"></i>
+    </div>
+    <h4 class="text-2xl font-bold text-genians-navy mb-4">보안 브리핑</h4>
+    <p class="text-gray-600 mb-6 leading-relaxed">
+        최신 보안 동향과 위협 정보를 자동으로 수집하여 맞춤형 브리핑을 제공합니다.
+    </p>
+    <div class="space-y-3">
+        <div class="flex items-center text-sm text-gray-500">
+            <i class="fas fa-check-circle text-genians-accent mr-2"></i>
+            실시간 위협 정보
+        </div>
+        <div class="flex items-center text-sm text-gray-500">
+            <i class="fas fa-check-circle text-genians-accent mr-2"></i>
+            자동 뉴스 수집
+        </div>
+        <div class="flex items-center text-sm text-gray-500">
+            <i class="fas fa-check-circle text-genians-accent mr-2"></i>
+            인텔리전스 요약
+        </div>
+    </div>
+</div>
+
+<!-- 연습실 카드 -->
+<div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 card-hover cursor-pointer" onclick="showLabDemo()">
+    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
+        <i class="fas fa-graduation-cap text-white text-2xl"></i>
+    </div>
+    <h4 class="text-2xl font-bold text-genians-navy mb-4">NAC 연습실</h4>
+    <p class="text-gray-600 mb-6 leading-relaxed">
+        체계적인 학습과 실전 테스트로 NAC 전문가로 성장할 수 있도록 지원합니다.
+    </p>
+    <div class="space-y-3">
+        <div class="flex items-center text-sm text-gray-500">
+            <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+            실전 시뮬레이션
+        </div>
+        <div class="flex items-center text-sm text-gray-500">
+            <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+            개인별 학습 분석
+        </div>
+        <div class="flex items-center text-sm text-gray-500">
+            <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+            성과 트래킹
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 실시간 데모 섹션 -->
+<section id="qa" class="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h3 class="text-4xl font-bold text-genians-navy mb-4">실시간 AI 검색 체험</h3>
+<p class="text-xl text-gray-600">실제 NAC 이슈를 검색해보고 AI의 강력한 분석 능력을 경험해보세요</p>
+</div>
+
+<div class="max-w-4xl mx-auto">
+<!-- 검색 인터페이스 -->
+<div class="bg-white rounded-3xl shadow-2xl p-8 mb-8">
+    <form onsubmit="performAISearch(event)" class="relative">
+        <div class="relative">
+            <i class="fas fa-search absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            <input 
+                type="text" 
+                id="aiSearchInput"
+                placeholder="예: 사용자 인증이 실패합니다"
+                class="w-full pl-16 pr-32 py-4 text-lg border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-genians-green focus:border-transparent"
+            >
+            <button 
+                type="submit"
+                id="searchButton"
+                class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-genians-green hover:bg-genians-light-green text-white px-6 py-2 rounded-xl font-semibold transition-colors duration-300"
+            >
+                분석하기
+            </button>
+        </div>
+    </form>
+    
+    <!-- 추천 검색어 -->
+    <div class="mt-6">
+        <p class="text-sm text-gray-500 mb-3">추천 검색어:</p>
+        <div class="flex flex-wrap gap-2">
+            <button onclick="setSearchQuery('802.1X 인증 실패')" class="px-4 py-2 bg-gray-100 hover:bg-genians-green hover:text-white rounded-lg text-sm transition-colors duration-300">802.1X 인증 실패</button>
+            <button onclick="setSearchQuery('NAC 정책 오류')" class="px-4 py-2 bg-gray-100 hover:bg-genians-green hover:text-white rounded-lg text-sm transition-colors duration-300">NAC 정책 오류</button>
+            <button onclick="setSearchQuery('엔드포인트 차단')" class="px-4 py-2 bg-gray-100 hover:bg-genians-green hover:text-white rounded-lg text-sm transition-colors duration-300">엔드포인트 차단</button>
+            <button onclick="setSearchQuery('네트워크 접속 불가')" class="px-4 py-2 bg-gray-100 hover:bg-genians-green hover:text-white rounded-lg text-sm transition-colors duration-300">네트워크 접속 불가</button>
+        </div>
+    </div>
+</div>
+
+<!-- 검색 결과 -->
+<div id="searchResults" class="hidden">
+    <div class="bg-white rounded-3xl shadow-2xl p-8">
+        <div class="flex items-center mb-6">
+            <div class="w-8 h-8 bg-genians-green rounded-full flex items-center justify-center mr-3">
+                <i class="fas fa-robot text-white"></i>
+            </div>
+            <h4 class="text-xl font-bold text-genians-navy">AI 분석 결과</h4>
+        </div>
+        
+        <div id="analysisResult" class="space-y-6">
+            <!-- 결과가 여기에 동적으로 로드됩니다 -->
+        </div>
+    </div>
+</div>
+
+<!-- 로딩 상태 -->
+<div id="loadingState" class="hidden">
+    <div class="bg-white rounded-3xl shadow-2xl p-8 text-center">
+        <div class="loading-spinner mx-auto mb-4"></div>
+        <p class="text-gray-600">AI가 분석 중입니다...</p>
+    </div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 최신 보안 뉴스 섹션 -->
+<section id="briefing" class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center mb-16">
+<div>
+    <h3 class="text-4xl font-bold text-genians-navy mb-4">보안 브리핑</h3>
+    <p class="text-xl text-gray-600">최신 보안 동향과 위협 인텔리전스를 실시간으로 확인하세요</p>
+</div>
+<button class="hidden md:block bg-genians-navy text-white px-6 py-3 rounded-xl font-semibold hover:bg-genians-dark-navy transition-colors duration-300">
+    전체 보기
+</button>
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- 뉴스 카드들 -->
+<article class="bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-lg p-6 card-hover">
+    <div class="flex items-center mb-4">
+        <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
+        <span class="text-sm font-semibold text-red-600">긴급</span>
+        <span class="ml-auto text-sm text-gray-500">1시간 전</span>
+    </div>
+    <h4 class="text-lg font-bold text-genians-navy mb-3">새로운 NAC 우회 공격 기법 발견</h4>
+    <p class="text-gray-600 mb-4 leading-relaxed">
+        최근 발견된 802.1X 프로토콜의 취약점을 악용한 새로운 우회 공격 기법에 대한 상세한 분석과 대응 방안을 제시합니다...
+    </p>
+    <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+            <span class="px-3 py-1 bg-genians-green/10 text-genians-green text-sm font-medium rounded-full">NAC</span>
+            <span class="px-3 py-1 bg-red-100 text-red-600 text-sm font-medium rounded-full">보안경보</span>
+        </div>
+        <button class="text-genians-green hover:text-genians-light-green font-semibold">
+            자세히 <i class="fas fa-arrow-right ml-1"></i>
+        </button>
+    </div>
+</article>
+
+<article class="bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-lg p-6 card-hover">
+    <div class="flex items-center mb-4">
+        <div class="w-3 h-3 bg-genians-green rounded-full mr-2"></div>
+        <span class="text-sm font-semibold text-genians-green">정상</span>
+        <span class="ml-auto text-sm text-gray-500">3시간 전</span>
+    </div>
+    <h4 class="text-lg font-bold text-genians-navy mb-3">엔드포인트 보안 정책 업데이트 완료</h4>
+    <p class="text-gray-600 mb-4 leading-relaxed">
+        전사 네트워크의 엔드포인트 보안 정책이 성공적으로 업데이트되었으며, 새로운 보안 규칙이 적용되었습니다...
+    </p>
+    <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+            <span class="px-3 py-1 bg-blue-100 text-blue-600 text-sm font-medium rounded-full">정책</span>
+            <span class="px-3 py-1 bg-genians-green/10 text-genians-green text-sm font-medium rounded-full">업데이트</span>
+        </div>
+        <button class="text-genians-green hover:text-genians-light-green font-semibold">
+            자세히 <i class="fas fa-arrow-right ml-1"></i>
+        </button>
+    </div>
+</article>
+
+<article class="bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-lg p-6 card-hover">
+    <div class="flex items-center mb-4">
+        <div class="w-3 h-3 bg-genians-accent rounded-full mr-2"></div>
+        <span class="text-sm font-semibold text-genians-accent">정보</span>
+        <span class="ml-auto text-sm text-gray-500">5시간 전</span>
+    </div>
+    <h4 class="text-lg font-bold text-genians-navy mb-3">2024 네트워크 보안 트렌드 리포트</h4>
+    <p class="text-gray-600 mb-4 leading-relaxed">
+        올해 네트워크 보안 분야의 주요 트렌드와 새로운 위협 동향을 분석한 종합 리포트가 발표되었습니다...
+    </p>
+    <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm font-medium rounded-full">트렌드</span>
+            <span class="px-3 py-1 bg-genians-accent/10 text-genians-accent text-sm font-medium rounded-full">리포트</span>
+        </div>
+        <button class="text-genians-green hover:text-genians-light-green font-semibold">
+            자세히 <i class="fas fa-arrow-right ml-1"></i>
+        </button>
+    </div>
+</article>
+</div>
+</div>
+</section>
+
+<!-- NAC 연습실 섹션 -->
+<section id="lab" class="py-24 gradient-bg">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h3 class="text-4xl font-bold text-white mb-4">NAC 연습실</h3>
+<p class="text-xl text-gray-300 max-w-3xl mx-auto">
+    실전 시뮬레이션과 체계적인 학습으로 NAC 전문가가 되어보세요
+</p>
+</div>
+
+<div class="grid md:grid-cols-3 gap-8">
+    <!-- 빠른 테스트 -->
+    <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 card-hover cursor-pointer" onclick="startQuickTest()">
+        <div class="w-16 h-16 bg-gradient-to-br from-genians-green to-genians-light-green rounded-2xl flex items-center justify-center mb-6">
+            <i class="fas fa-bolt text-white text-2xl"></i>
+        </div>
+        <h4 class="text-2xl font-bold text-white mb-4">빠른 테스트</h4>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+            10분 안에 완료할 수 있는 핵심 NAC 개념 테스트로 실력을 점검하세요.
+        </p>
+        <div class="space-y-3 mb-6">
+            <div class="flex items-center text-sm text-gray-300">
+                <i class="fas fa-clock text-genians-green mr-2"></i>
+                소요시간: 10분
+            </div>
+            <div class="flex items-center text-sm text-gray-300">
+                <i class="fas fa-question-circle text-genians-green mr-2"></i>
+                문항수: 15문제
+            </div>
+            <div class="flex items-center text-sm text-gray-300">
+                <i class="fas fa-chart-line text-genians-green mr-2"></i>
+                즉시 결과 확인
+            </div>
+        </div>
+        <button class="w-full bg-genians-green hover:bg-genians-light-green text-genians-navy py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105">
+            시작하기
+        </button>
+    </div>
+    
+    <!-- 모의시험 -->
+    <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 card-hover cursor-pointer" onclick="startMockExam()">
+        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fas fa-graduation-cap text-white text-2xl"></i>
+        </div>
+        <h4 class="text-2xl font-bold text-white mb-4">모의시험</h4>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+            실제 NAC 인증시험과 동일한 환경에서 종합적인 실력을 평가받으세요.
+        </p>
+        <div class="space-y-3 mb-6">
+            <div class="flex items-center text-sm text-gray-300">
+                <i class="fas fa-clock text-purple-400 mr-2"></i>
+                소요시간: 60분
+            </div>
+            <div class="flex items-center text-sm text-gray-300">
+                <i class="fas fa-question-circle text-purple-400 mr-2"></i>
+                문항수: 50문제
+            </div>
+            <div class="flex items-center text-sm text-gray-300">
+                <i class="fas fa-certificate text-purple-400 mr-2"></i>
+                상세 성적표 제공
+            </div>
+        </div>
+        <button class="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105">
+            시작하기
+        </button>
+    </div>
+    
+    <!-- 오답노트 -->
+    <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 card-hover cursor-pointer" onclick="showWrongAnswers()">
+        <div class="w-16 h-16 bg-gradient-to-br from-genians-accent to-blue-500 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fas fa-book-open text-white text-2xl"></i>
+        </div>
+        <h4 class="text-2xl font-bold text-white mb-4">오답노트</h4>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+            틀린 문제들을 체계적으로 복습하고 약점을 보완하여 실력을 향상시키세요.
+        </p>
+        <div class="space-y-3 mb-6">
+            <div class="flex items-center text-sm text-gray-300">
+                <i class="fas fa-brain text-genians-accent mr-2"></i>
+                개인별 맞춤 복습
+            </div>
+            <div class="flex items-center text-sm text-gray-300">
+                <i class="fas fa-lightbulb text-genians-accent mr-2"></i>
+                상세한 해설 제공
+            </div>
+            <div class="flex items-center text-sm text-gray-300">
+                <i class="fas fa-chart-bar text-genians-accent mr-2"></i>
+                학습 진도 추적
+            </div>
+        </div>
+        <button class="w-full bg-genians-accent hover:bg-blue-500 text-white py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105">
+            복습하기
+        </button>
+    </div>
+</div>
+
+<!-- 학습 현황 대시보드 -->
+<div class="mt-16 bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+    <h4 class="text-2xl font-bold text-white mb-8 text-center">나의 학습 현황</h4>
+    
+    <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center">
+            <div class="w-20 h-20 bg-gradient-to-br from-genians-green to-genians-light-green rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-2xl font-bold text-white" id="completedTests">12</span>
+            </div>
+            <p class="text-white font-semibold mb-1">완료한 테스트</p>
+            <p class="text-gray-300 text-sm">총 테스트 수</p>
+        </div>
+        
+        <div class="text-center">
+            <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-2xl font-bold text-white">87%</span>
+            </div>
+            <p class="text-white font-semibold mb-1">평균 정답률</p>
+            <p class="text-gray-300 text-sm">최근 10회 기준</p>
+        </div>
+        
+        <div class="text-center">
+            <div class="w-20 h-20 bg-gradient-to-br from-genians-accent to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-2xl font-bold text-white">24</span>
+            </div>
+            <p class="text-white font-semibold mb-1">학습 연속일</p>
+            <p class="text-gray-300 text-sm">연속 학습 기록</p>
+        </div>
+        
+        <div class="text-center">
+            <div class="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-xl font-bold text-white">고급</span>
+            </div>
+            <p class="text-white font-semibold mb-1">현재 레벨</p>
+            <p class="text-gray-300 text-sm">NAC 전문가 과정</p>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
+<script>
+    // 모바일 메뉴 토글
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+    }
+
+    // 메인 검색 처리
+    function handleMainSearch(event) {
+        event.preventDefault();
+        const query = document.getElementById('mainSearchInput').value.trim();
+        if (query) {
+            document.getElementById('qa').scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                document.getElementById('aiSearchInput').value = query;
+                performAISearch(event);
+            }, 500);
+        }
+    }
+
+    // AI 검색 수행
+    function performAISearch(event) {
+        event.preventDefault();
+        const query = document.getElementById('aiSearchInput').value.trim();
+        
+        if (!query) return;
+
+        showLoadingState();
+        setTimeout(() => {
+            showSearchResults(query);
+        }, 3000);
+    }
+
+    // 로딩 상태 표시
+    function showLoadingState() {
+        document.getElementById('searchResults').classList.add('hidden');
+        document.getElementById('loadingState').classList.remove('hidden');
+    }
+
+    // 검색 결과 표시
+    function showSearchResults(query) {
+        document.getElementById('loadingState').classList.add('hidden');
+        document.getElementById('searchResults').classList.remove('hidden');
+
+        const mockResults = {
+            '802.1X 인증 실패': {
+                confidence: '94%',
+                category: 'NAC 인증',
+                cause: '인증서 만료 또는 RADIUS 서버 연결 문제',
+                solution: '1. 인증서 유효기간 확인\n2. RADIUS 서버 상태 점검\n3. 네트워크 연결 상태 확인\n4. 사용자 계정 권한 검토',
+                tags: ['802.1X', 'RADIUS', '인증서', '네트워크보안']
+            },
+            '기본': {
+                confidence: '87%',
+                category: 'NAC 일반',
+                cause: 'NAC 정책 설정 또는 네트워크 구성 문제',
+                solution: '1. NAC 정책 검토\n2. 네트워크 설정 확인\n3. 로그 분석\n4. 시스템 재시작 고려',
+                tags: ['NAC', '정책', '네트워크', '보안']
+            }
+        };
+
+        const result = mockResults[query] || mockResults['기본'];
+
+        document.getElementById('analysisResult').innerHTML = `
+            <div class="bg-gradient-to-r from-genians-green/10 to-genians-light-green/10 rounded-2xl p-6 border border-genians-green/20">
+                <div class="flex items-center justify-between mb-4">
+                    <h5 class="text-lg font-bold text-genians-navy">분석 완료</h5>
+                    <div class="flex items-center space-x-2">
+                        <span class="px-3 py-1 bg-genians-green text-white text-sm font-semibold rounded-full">신뢰도 ${result.confidence}</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-medium rounded-full">${result.category}</span>
+                    </div>
+                </div>
+                <p class="text-gray-700 leading-relaxed">${result.cause}</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-gray-200 p-6">
+                <h5 class="text-lg font-bold text-genians-navy mb-4 flex items-center">
+                    <i class="fas fa-tools text-genians-green mr-2"></i>
+                    권장 해결 방법
+                </h5>
+                <div class="space-y-2 text-gray-700">
+                    ${result.solution.split('\n').map(step => `<div class="flex items-start"><i class="fas fa-check-circle text-genians-green mr-3 mt-1"></i><span>${step}</span></div>`).join('')}
+                </div>
+            </div>
+
+            <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+                <h5 class="text-lg font-bold text-genians-navy mb-4">관련 태그</h5>
+                <div class="flex flex-wrap gap-2">
+                    ${result.tags.map(tag => `<span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-full">${tag}</span>`).join('')}
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between bg-gray-50 rounded-2xl p-6">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-lightbulb text-amber-500 text-xl"></i>
+                    <span class="font-semibold text-genians-navy">추가 도움이 필요하시나요?</span>
+                </div>
+                <button class="bg-genians-green hover:bg-genians-light-green text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300">
+                    전문가 상담
+                </button>
+            </div>
+        `;
+    }
+
+    // 검색어 설정
+    function setSearchQuery(query) {
+        document.getElementById('aiSearchInput').value = query;
+        performAISearch(new Event('submit'));
+    }
+
+    // 데모 함수들
+    function showQADemo() {
+        document.getElementById('qa').scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+            document.getElementById('aiSearchInput').value = '802.1X 인증 실패';
+            performAISearch(new Event('submit'));
+        }, 500);
+    }
+
+    function showBriefingDemo() {
+        document.getElementById('briefing').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function showLabDemo() {
+        document.getElementById('lab').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // 연습실 기능들
+    function startQuickTest() {
+        showModal('빠른 테스트', `
+            <div class="text-center">
+                <div class="w-20 h-20 bg-genians-green rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-bolt text-white text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-genians-navy mb-4">빠른 테스트 시작</h3>
+                <p class="text-gray-600 mb-8">15문제의 NAC 핵심 개념을 테스트합니다.<br>예상 소요 시간: 10분</p>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="text-2xl font-bold text-genians-green">15</div>
+                        <div class="text-sm text-gray-600">문제 수</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="text-2xl font-bold text-genians-green">10분</div>
+                        <div class="text-sm text-gray-600">제한 시간</div>
+                    </div>
+                </div>
+                <button onclick="startTest('quick')" class="w-full bg-genians-green hover:bg-genians-light-green text-white py-3 rounded-xl font-bold transition-colors duration-300">
+                    테스트 시작
+                </button>
+            </div>
+        `);
+    }
+
+    function startMockExam() {
+        showModal('모의시험', `
+            <div class="text-center">
+                <div class="w-20 h-20 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-graduation-cap text-white text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-genians-navy mb-4">NAC 모의시험</h3>
+                <p class="text-gray-600 mb-8">실제 NAC 인증시험과 동일한 환경에서 실력을 평가합니다.<br>예상 소요 시간: 60분</p>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="text-2xl font-bold text-purple-500">50</div>
+                        <div class="text-sm text-gray-600">문제 수</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="text-2xl font-bold text-purple-500">60분</div>
+                        <div class="text-sm text-gray-600">제한 시간</div>
+                    </div>
+                </div>
+                <button onclick="startTest('mock')" class="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded-xl font-bold transition-colors duration-300">
+                    모의시험 시작
+                </button>
+            </div>
+        `);
+    }
+
+    function showWrongAnswers() {
+        showModal('오답노트', `
+            <div class="text-center">
+                <div class="w-20 h-20 bg-genians-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-book-open text-white text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-genians-navy mb-4">오답노트</h3>
+                <p class="text-gray-600 mb-8">지금까지 틀린 문제들을 복습하여 약점을 보완하세요.</p>
+                <div class="space-y-4 mb-8">
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 text-left">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-semibold text-red-600">802.1X 프로토콜</span>
+                            <span class="text-xs text-gray-500">3회 오답</span>
+                        </div>
+                        <p class="text-sm text-gray-700">802.1X 인증 과정에서 EAP 메시지 교환 순서</p>
+                    </div>
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-left">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-semibold text-yellow-600">NAC 정책</span>
+                            <span class="text-xs text-gray-500">2회 오답</span>
+                        </div>
+                        <p class="text-sm text-gray-700">동적 VLAN 할당 정책 설정 방법</p>
+                    </div>
+                    <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 text-left">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-semibold text-orange-600">엔드포인트 보안</span>
+                            <span class="text-xs text-gray-500">1회 오답</span>
+                        </div>
+                        <p class="text-sm text-gray-700">디바이스 핑거프린팅 기술의 원리</p>
+                    </div>
+                </div>
+                <button onclick="startReview()" class="w-full bg-genians-accent hover:bg-blue-500 text-white py-3 rounded-xl font-bold transition-colors duration-300">
+                    복습 시작
+                </button>
+            </div>
+        `);
+    }
+
+    function startTest(type) {
+        closeModal();
+        showModal('테스트 진행 중', `
+            <div class="text-center">
+                <div class="loading-spinner mx-auto mb-6"></div>
+                <h3 class="text-2xl font-bold text-genians-navy mb-4">테스트 준비 중...</h3>
+                <p class="text-gray-600">문제를 불러오고 있습니다. 잠시만 기다려주세요.</p>
+            </div>
+        `);
+        
+        setTimeout(() => {
+            closeModal();
+            alert(`${type === 'quick' ? '빠른 테스트' : '모의시험'}가 시작됩니다!`);
+        }, 2000);
+    }
+
+    function startReview() {
+        closeModal();
+        alert('오답노트 복습을 시작합니다!');
+    }
+
+    // 모달 함수들
+    function showModal(title, content) {
+        const modal = document.createElement('div');
+        modal.id = 'modal';
+        modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+        modal.innerHTML = `
+            <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 transform transition-all duration-300 scale-95">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold text-genians-navy">${title}</h2>
+                    <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                ${content}
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        setTimeout(() => {
+            modal.querySelector('.bg-white').classList.remove('scale-95');
+            modal.querySelector('.bg-white').classList.add('scale-100');
+        }, 10);
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('modal');
+        if (modal) {
+            modal.remove();
+        }
+    }
+
+    // 스크롤 네비게이션
+    window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('text-genians-green');
+            link.classList.add('text-gray-300');
+            if (link.getAttribute('href').substring(1) === current) {
+                link.classList.remove('text-gray-300');
+                link.classList.add('text-genians-green');
+            }
+        });
+    });
+
+    // 카운터 애니메이션
+    document.addEventListener('DOMContentLoaded', function() {
+        animateCounter('issueCount', 2847);
+        animateCounter('completedTests', 12);
+    });
+
+    function animateCounter(elementId, target) {
+        const element = document.getElementById(elementId);
+        if (!element) return;
+        
+        let current = 0;
+        const increment = target / 100;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            element.textContent = Math.floor(current).toLocaleString();
+        }, 20);
+    }
+
+    // 스무스 스크롤
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // 키보드 이벤트
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+        if (e.key === 'Enter' && document.activeElement.id === 'mainSearchInput') {
+            handleMainSearch(e);
+        }
+    });
+
+    // 실시간 시계
+    function updateTime() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString('ko-KR');
+        
+        document.querySelector('.news-ticker-content').innerHTML = `
+            <i class="fas fa-bullhorn mr-2"></i>
+            실시간 보안 알림 (${timeString}): 새로운 NAC 정책 업데이트 완료 • 802.1X 인증 서비스 정상 운영 중 • 보안 위협 탐지 시스템 활성화 • 엔드포인트 보안 상태 양호
+        `;
+    }
+
+    setInterval(updateTime, 60000);
+    updateTime();
+
+    console.log('지니언스 NAC 도우미가 시작되었습니다!');
+</script>
+</body>
+</html>
